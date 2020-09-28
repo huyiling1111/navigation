@@ -1,7 +1,7 @@
 # navigation
 
 一款美观实用的手机导航网页，支持网页搜索、常用网站的添加与删除功能。使用媒体查询完美支持移动端与 PC 端
-![示例图片](https://huyiling1111.github.io/navigation/example.jpg)
+![示例图片](https://github.com/huyiling1111/navigation/example.png)
 
 ## 预览
 
