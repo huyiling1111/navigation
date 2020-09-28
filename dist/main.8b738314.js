@@ -125,33 +125,41 @@ var $lastLi = $siteList.find('li.last'); //操作siteList元素里类名为last�
 var x = localStorage.getItem('x');
 var xObject = JSON.parse(x);
 var hashMap = xObject || [{
-  logo: 'a./images/bilibili.png',
+  logo: 'a',
   logoType: 'image',
-  url: 'bilibili.com'
+  url: 'https://developer.mozilla.org/'
 }, {
-  logo: './images/bilibili.png',
+  logo: 'g',
   logoType: 'image',
-  url: 'bilibili.com'
+  url: 'https://github.com/'
 }, {
-  logo: './images/bilibili.png',
+  logo: 'j',
   logoType: 'image',
-  url: 'bilibili.com'
+  url: 'https://juejin.im/'
 }, {
-  logo: './images/bilibili.png',
+  logo: 'j',
   logoType: 'image',
-  url: 'bilibili.com'
+  url: 'http://www.iciba.com/'
+}, {
+  logo: 'w',
+  logoType: 'image',
+  url: 'https://wangdoc.com/html/'
+}, {
+  logo: 'y',
+  logoType: 'image',
+  url: 'https://www.yuque.com/'
 }];
 console.log(hashMap); //将数据以哈希表组成的数组存入hashmap中
 
 var simplifyUrl = function simplifyUrl(url) {
-  return url.replace('https://', '').replace('http://', '').replace('www', '').replace(/\/.*/, ''); //正则 删除/后面的内容
+  return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, ''); //正则 删除/后面的内容
 };
 
 var render = function render() {
   $siteList.find('li:not(.last)').remove(); //删除除最后一个节点外的节点
 
   hashMap.forEach(function (node, index) {
-    var $li = $(" <li class=\"site\">\n        <div class=\"logo\">".concat(node.url[0], "</div>\n         <h3>").concat(simplifyUrl(node.url), "</h3>\n         <div class=\"close\"><svg class=\"icon iconstyle\" >\n         <use xlink:href=\"#icon-guanbi\"></use>\n       </svg></div>\n       </li>")).insertBefore($lastLi);
+    var $li = $(" <li class=\"site\">\n        <div class=\"logo\">".concat(node.logo, "</div>\n         <h3>").concat(simplifyUrl(node.url), "</h3>\n         <div class=\"close\"><svg class=\"icon iconstyle\" >\n         <use xlink:href=\"#icon-guanbi\"></use>\n       </svg></div>\n       </li>")).insertBefore($lastLi);
     $li.on('click', function () {
       window.open(node.url);
     });
@@ -175,7 +183,7 @@ $('.addButton').on('click', function () {
 
   hashMap.push({
     logo: simplifyUrl(url)[0],
-    logoType: "image",
+    logoType: "text",
     url: url
   });
   render();
@@ -196,4 +204,4 @@ $(document).on('keypress', function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.19c375ab.js.map
+//# sourceMappingURL=main.8b738314.js.map

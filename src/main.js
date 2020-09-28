@@ -5,23 +5,29 @@ const $lastLi = $siteList.find('li.last')
 const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
 const hashMap = xObject || [{
-    logo: 'a./images/bilibili.png', logoType: 'image', url: 'bilibili.com'
+    logo: 'a', logoType: 'image', url: 'https://developer.mozilla.org/'
 },
 {
-    logo: './images/bilibili.png', logoType: 'image', url: 'bilibili.com'
+    logo: 'g', logoType: 'image', url: 'https://github.com/'
 },
 {
-    logo: './images/bilibili.png', logoType: 'image', url: 'bilibili.com'
+    logo: 'j', logoType: 'image', url: 'https://juejin.im/'
 },
 {
-    logo: './images/bilibili.png', logoType: 'image', url: 'bilibili.com'
+    logo: 'j', logoType: 'image', url: 'http://www.iciba.com/'
 },
+{
+    logo: 'w', logoType: 'image', url: 'https://wangdoc.com/html/'
+},
+{
+    logo: 'y', logoType: 'image', url: 'https://www.yuque.com/'
+}
 ]
 console.log(hashMap)
 
 //将数据以哈希表组成的数组存入hashmap中
 const simplifyUrl = (url) => {
-    return url.replace('https://', '').replace('http://', '').replace('www', '').replace(/\/.*/, '')
+    return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, '')
     //正则 删除/后面的内容
 }
 const render = () => {
@@ -29,7 +35,7 @@ const render = () => {
     //删除除最后一个节点外的节点
     hashMap.forEach((node, index) => {
         const $li = $(` <li class="site">
-        <div class="logo">${node.url[0]}</div>
+        <div class="logo">${node.logo}</div>
          <h3>${simplifyUrl(node.url)}</h3>
          <div class="close"><svg class="icon iconstyle" >
          <use xlink:href="#icon-guanbi"></use>
@@ -54,7 +60,7 @@ $('.addButton').on('click', () => {
         url = 'https://' + url
     }
 
-    hashMap.push({ logo: simplifyUrl(url)[0], logoType: "image", url: url })
+    hashMap.push({ logo: simplifyUrl(url)[0], logoType: "text", url: url })
     render()
 })
 window.onbeforeunload = () => {

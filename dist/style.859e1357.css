@@ -1,6 +1,19 @@
 body {
-  border: 1px solid red;
-  color: rgb(112, 112, 112);
+  /* color: rgb(112, 112, 112); */
+  color: rgb(252, 164, 156);
+  width: 100%;
+  height: 100%;
+  background: url(background.01097f91.jpg);
+  /* 背景图垂直、水平均居中 */
+  background-position: center center;
+  /* 背景图不平铺 */
+  background-repeat: repeat;
+  /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+  background-attachment: fixed;
+  /* 让背景图基于容器大小伸缩 */
+  background-size: cover;
+  /* 设置背景颜色，背景图加载过程中会显示背景色*/
+  background-color: rgb(254, 223, 220);
 }
 .globalHeader {
   width: 320px;
@@ -9,6 +22,9 @@ body {
   margin-top: 140px;
   margin-bottom: 70px;
   position: relative;
+}
+.globalHeader img {
+  width: 28px;
 }
 @media (min-width: 800px) {
   .globalHeader {
@@ -26,7 +42,7 @@ body {
   height: 2.7em;
   border-radius: 4px;
   border: none;
-  border: 2px solid pink;
+  border: 3px solid rgb(252, 164, 156);
   color: #6a6f77;
   outline: 0;
   width: 100%;
@@ -35,12 +51,11 @@ body {
   display: block;
   white-space: nowrap;
   border: none;
-  border: 1px solid red;
   background: white;
   position: absolute;
   top: 50%;
-  right: 0%;
-  transform: translateY(-50%);
+  right: 2%;
+  transform: translateY(-48%);
 }
 .siteList {
   /* border: 1px solid red; */
@@ -64,7 +79,7 @@ body {
 }
 /* 当width大于495时 */
 .siteList li {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
@@ -87,7 +102,11 @@ body {
   text-transform: uppercase;
 }
 .siteList li h3 {
+  width: 100px;
+  text-align: center;
   font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .siteList li .close {
   position: absolute;
@@ -98,10 +117,13 @@ body {
 .siteList li:hover .close {
   display: block;
 }
+.siteList li:hover {
+  background-color: rgba(212, 198, 196, 0.6);
+}
 .iconstyle {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 }
 
 
-/*# sourceMappingURL=style.03905050.css.map */
+/*# sourceMappingURL=style.859e1357.css.map */
