@@ -118,6 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"epB2":[function(require,module,exports) {
+console.log(1);
 var $siteList = $('.siteList'); //操作siteList元素
 
 var $lastLi = $siteList.find('li.last'); //操作siteList元素里类名为last的li元素
@@ -204,4 +205,4 @@ $(document).on('keypress', function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.8b738314.js.map
+//# sourceMappingURL=main.59270574.js.map

@@ -1,3 +1,4 @@
+console.log(1)
 const $siteList = $('.siteList')
 //操作siteList元素
 const $lastLi = $siteList.find('li.last')
